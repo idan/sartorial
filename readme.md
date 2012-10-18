@@ -1,6 +1,6 @@
 # Sartorial
 
-A pleasantly clean dark theme for the [Textual IRC client](http://codeux.com/textual/).
+A pleasantly clean dark theme for the [Textual IRC client](http://codeux.com/textual/), specifically Textual 2.1.1 and up. If you don't feel like [building it yourself](http://github.com/codeux/textual), you can [get a binary build](http://inzain.net/textual-builds/) courtesy of Zain's Qwalitee Software Buildz™®.
 
 ## What's awesome about it?
 
