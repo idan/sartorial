@@ -1,6 +1,15 @@
 # Sartorial
 
-A pleasantly clean dark theme for the [Textual IRC client](http://codeux.com/textual/), specifically Textual 2.1.1 and up. If you don't feel like [building it yourself](http://github.com/codeux/textual), you can [get a binary build](http://inzain.net/textual-builds/) courtesy of Zain's Qwalitee Software Buildz™®.
+A pleasantly clean dark theme for the [Textual IRC client](http://codeux.com/textual/), specifically Textual 2.1.1 and up, which is newer than what's currently in the Appstore. If you don't feel like [building it yourself](http://github.com/codeux/textual), you can [get a binary build](http://inzain.net/textual-builds/) courtesy of Zain's Qwalitee Software Buildz™®.
+
+Hey, did you notice the part about 2.1.0 not working?
+
+No?
+
+How about now?
+
+Srsly, the Appstore 2.1.0 version will not work with this theme.
+
 
 ## What's awesome about it?
 
