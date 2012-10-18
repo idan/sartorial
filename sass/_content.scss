@@ -2,7 +2,7 @@
 .line {
     color: #8E9191;
     &.event {
-        font-family: "Source Sans Pro";
+        font-family: "Source Sans Pro" !important;
         font-weight: 300;
         .message {
             color: #555;
