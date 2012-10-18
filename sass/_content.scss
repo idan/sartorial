@@ -1,0 +1,92 @@
+
+.line {
+    color: #8E9191;
+    &.event {
+        font-family: "Source Sans Pro";
+        font-weight: 300;
+        .message {
+            color: #555;
+            font-size: 0.85em;
+            padding-left: 12.941176471em;
+            padding-right: 4.705882353;
+            @mixin joinpart {
+                font-size: 1.2em;
+                letter-spacing: 1px;
+                padding-right: 0.5em;
+                opacity: 0.6;
+            }
+            &[type*=join] {
+                &:before {
+                    content: "+++";
+                    @include joinpart;
+                    color: #b5bd68;
+                }
+            }
+            &[type*=kick],
+            &[type*=part],
+            &[type*=quit] {
+                &:before {
+                    content: "−−−";
+                    color: #cc6666;
+                    @include joinpart;
+                }
+            }
+        }
+    }
+
+    &>p {
+        margin: 0;
+        padding: 3px 0;
+        position: relative;
+        line-height: 1.4em;
+    }
+
+    .time, .message, .sender {
+        display: block;
+    }
+
+    .time {
+        width: 4em;
+        float: right;
+        opacity: 0;
+        color: #71736F;
+        text-align: right;
+        margin-right: 1em;
+        @include transition(opacity 0.1s linear);
+    }
+
+    &:hover .time {
+        opacity: 1;
+    }
+
+    .message {
+        padding-left: 11em;
+        padding-right: 4em;
+        color: #aaa;
+        .sender {
+            position: absolute;
+            left: 0;
+            width: 10em;
+            text-align: right;
+        }
+    }
+
+    &[type*=notice],
+    &[type*=ctcp],
+    &[type*=wallops] {
+        color: red;
+        opacity: 0.6;
+    }
+
+    &[type*=action] {
+        .sender:before {
+            content: "➼ ";
+            display: inline;
+        }
+
+    }
+
+    &[highlight=true] {
+        background-color: #393939;
+    }
+}

@@ -1,0 +1,40 @@
+@import "bourbon/bourbon";
+@import "fonts";
+
+
+/* Basic Body Structure */
+* {
+    @include box-sizing(border-box);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+}
+
+body {
+//    color: #B7C5C3;
+    color: #71736F;
+    height: 100%;
+    z-index: 100;
+    overflow: hidden;
+    overflow-y: visible;
+    background-color: #1D1F21;
+    font-family: "Source Code Pro";
+    font-weight: 300;
+    font-size: 1em;
+}
+
+body {
+    padding-top: 4em;
+}
+
+
+@import "content";
+@import "links";
+@import "images";
+@import "topic_bar";
+@import "nick_colors";
+@import "mirc_colors";
+@import "loading_screen";

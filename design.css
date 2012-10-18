@@ -1,0 +1,418 @@
+@charset "UTF-8";
+/* Fonts */
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("fonts/SourceCodePro-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("fonts/SourceCodePro-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("fonts/SourceCodePro-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("fonts/SourceSansPro-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("fonts/SourceSansPro-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("fonts/SourceSansPro-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal; }
+
+/* Basic Body Structure */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 1em; }
+
+body {
+  color: #71736F;
+  height: 100%;
+  z-index: 100;
+  overflow: hidden;
+  overflow-y: visible;
+  background-color: #1D1F21;
+  font-family: "Source Code Pro";
+  font-weight: 300;
+  font-size: 1em; }
+
+body {
+  padding-top: 4em; }
+
+.line {
+  color: #8E9191; }
+  .line.event {
+    font-family: "Source Sans Pro";
+    font-weight: 300; }
+    .line.event .message {
+      color: #555;
+      font-size: 0.85em;
+      padding-left: 12.941176471em;
+      padding-right: 4.705882353; }
+      .line.event .message[type*=join]:before {
+        content: "+++";
+        font-size: 1.2em;
+        letter-spacing: 1px;
+        padding-right: 0.5em;
+        opacity: 0.6;
+        color: #b5bd68; }
+      .line.event .message[type*=kick]:before, .line.event .message[type*=part]:before, .line.event .message[type*=quit]:before {
+        content: "−−−";
+        color: #cc6666;
+        font-size: 1.2em;
+        letter-spacing: 1px;
+        padding-right: 0.5em;
+        opacity: 0.6; }
+  .line > p {
+    margin: 0;
+    padding: 3px 0;
+    position: relative;
+    line-height: 1.4em; }
+  .line .time, .line .message, .line .sender {
+    display: block; }
+  .line .time {
+    width: 4em;
+    float: right;
+    opacity: 0;
+    color: #71736F;
+    text-align: right;
+    margin-right: 1em;
+    -webkit-transition: opacity 0.1s linear;
+    -moz-transition: opacity 0.1s linear;
+    -ms-transition: opacity 0.1s linear;
+    -o-transition: opacity 0.1s linear;
+    transition: opacity 0.1s linear; }
+  .line:hover .time {
+    opacity: 1; }
+  .line .message {
+    padding-left: 11em;
+    padding-right: 4em;
+    color: #aaa; }
+    .line .message .sender {
+      position: absolute;
+      left: 0;
+      width: 10em;
+      text-align: right; }
+  .line[type*=notice], .line[type*=ctcp], .line[type*=wallops] {
+    color: red;
+    opacity: 0.6; }
+  .line[type*=action] .sender:before {
+    content: "➼ ";
+    display: inline; }
+  .line[highlight=true] {
+    background-color: #393939; }
+
+/* Links */
+a {
+  color: #7aa6da;
+  -webkit-transition: color 160ms linear;
+  -moz-transition: color 160ms linear;
+  -ms-transition: color 160ms linear;
+  -o-transition: color 160ms linear;
+  transition: color 160ms linear; }
+  a:hover {
+    color: #bbdaff; }
+
+/* Images */
+.inlineimage {
+  border: 0;
+  display: block;
+  max-width: 100% !important;
+  padding: 1em 0; }
+
+/* Topic Bar */
+#topic_bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  /* Set by JavaScript */
+  z-index: 400;
+  color: #aaa;
+  padding: 0.5em 1em;
+  border-bottom: 1px solid #404040;
+  font-family: "Source Sans Pro";
+  font-weight: 300;
+  font-size: 1.25em;
+  background: #222;
+  text-align: center;
+  -webkit-box-shadow: 0 10px 30px #222222;
+  box-shadow: 0 10px 30px #222222; }
+
+/* Nickname Colors */
+body .sender[type*=normal][colornumber='0'],
+body .inline_nickname[colornumber='0'] {
+  color: #cc6666; }
+
+body .sender[type*=normal][colornumber='1'],
+body .inline_nickname[colornumber='1'] {
+  color: #de935f; }
+
+body .sender[type*=normal][colornumber='2'],
+body .inline_nickname[colornumber='2'] {
+  color: #f0c674; }
+
+body .sender[type*=normal][colornumber='3'],
+body .inline_nickname[colornumber='3'] {
+  color: #b5bd68; }
+
+body .sender[type*=normal][colornumber='4'],
+body .inline_nickname[colornumber='4'] {
+  color: #8abeb7; }
+
+body .sender[type*=normal][colornumber='5'],
+body .inline_nickname[colornumber='5'] {
+  color: #81a2be; }
+
+body .sender[type*=normal][colornumber='6'],
+body .inline_nickname[colornumber='6'] {
+  color: #b294bb; }
+
+body .sender[type*=normal][colornumber='7'],
+body .inline_nickname[colornumber='7'] {
+  color: #c82829; }
+
+body .sender[type*=normal][colornumber='8'],
+body .inline_nickname[colornumber='8'] {
+  color: #75A1FB; }
+
+body .sender[type*=normal][colornumber='9'],
+body .inline_nickname[colornumber='9'] {
+  color: #f5871f; }
+
+body .sender[type*=normal][colornumber='10'],
+body .inline_nickname[colornumber='10'] {
+  color: #eab700; }
+
+body .sender[type*=normal][colornumber='11'],
+body .inline_nickname[colornumber='11'] {
+  color: #718c00; }
+
+body .sender[type*=normal][colornumber='12'],
+body .inline_nickname[colornumber='12'] {
+  color: #3e999f; }
+
+body .sender[type*=normal][colornumber='13'],
+body .inline_nickname[colornumber='13'] {
+  color: #4271ae; }
+
+body .sender[type*=normal][colornumber='14'],
+body .inline_nickname[colornumber='14'] {
+  color: #8959a8; }
+
+body .sender[type*=normal][colornumber='15'],
+body .inline_nickname[colornumber='15'] {
+  color: #f2777a; }
+
+body .sender[type*=normal][colornumber='16'],
+body .inline_nickname[colornumber='16'] {
+  color: #f99157; }
+
+body .sender[type*=normal][colornumber='17'],
+body .inline_nickname[colornumber='17'] {
+  color: #ffcc66; }
+
+body .sender[type*=normal][colornumber='18'],
+body .inline_nickname[colornumber='18'] {
+  color: #99cc99; }
+
+body .sender[type*=normal][colornumber='19'],
+body .inline_nickname[colornumber='19'] {
+  color: #66cccc; }
+
+body .sender[type*=normal][colornumber='20'],
+body .inline_nickname[colornumber='20'] {
+  color: #6699cc; }
+
+body .sender[type*=normal][colornumber='21'],
+body .inline_nickname[colornumber='21'] {
+  color: #cc99cc; }
+
+body .sender[type*=normal][colornumber='22'],
+body .inline_nickname[colornumber='22'] {
+  color: #ff9da4; }
+
+body .sender[type*=normal][colornumber='23'],
+body .inline_nickname[colornumber='23'] {
+  color: #ffc58f; }
+
+body .sender[type*=normal][colornumber='24'],
+body .inline_nickname[colornumber='24'] {
+  color: #ffeead; }
+
+body .sender[type*=normal][colornumber='25'],
+body .inline_nickname[colornumber='25'] {
+  color: #d1f1a9; }
+
+body .sender[type*=normal][colornumber='26'],
+body .inline_nickname[colornumber='26'] {
+  color: #99ffff; }
+
+body .sender[type*=normal][colornumber='27'],
+body .inline_nickname[colornumber='27'] {
+  color: #bbdaff; }
+
+body .sender[type*=normal][colornumber='28'],
+body .inline_nickname[colornumber='28'] {
+  color: #ebbbff; }
+
+body .sender[type*=normal][colornumber='29'],
+body .inline_nickname[colornumber='29'] {
+  color: #d54e53; }
+
+body .sender[type*=normal][colornumber='30'],
+body .inline_nickname[colornumber='30'] {
+  color: #e78c45; }
+
+/* mIRC Color Codes */
+.effect[color-number='0'] {
+  color: #ffffff; }
+
+.effect[color-number='1'] {
+  color: #000000; }
+
+.effect[color-number='2'] {
+  color: #000088; }
+
+.effect[color-number='3'] {
+  color: #008800; }
+
+.effect[color-number='4'] {
+  color: #ff0000; }
+
+.effect[color-number='5'] {
+  color: #880000; }
+
+.effect[color-number='6'] {
+  color: #880088; }
+
+.effect[color-number='7'] {
+  color: #ff8800; }
+
+.effect[color-number='8'] {
+  color: #ffff00; }
+
+.effect[color-number='9'] {
+  color: #00ff00; }
+
+.effect[color-number='10'] {
+  color: #008888; }
+
+.effect[color-number='11'] {
+  color: #00ffff; }
+
+.effect[color-number='12'] {
+  color: #0000ff; }
+
+.effect[color-number='13'] {
+  color: #ff00ff; }
+
+.effect[color-number='14'] {
+  color: #888888; }
+
+.effect[color-number='15'] {
+  color: #cccccc; }
+
+.effect[bgcolor-number='0'] {
+  background-color: #ffffff; }
+
+.effect[bgcolor-number='1'] {
+  background-color: #000000; }
+
+.effect[bgcolor-number='2'] {
+  background-color: #000088; }
+
+.effect[bgcolor-number='3'] {
+  background-color: #008800; }
+
+.effect[bgcolor-number='4'] {
+  background-color: #ff0000; }
+
+.effect[bgcolor-number='5'] {
+  background-color: #880000; }
+
+.effect[bgcolor-number='6'] {
+  background-color: #880088; }
+
+.effect[bgcolor-number='7'] {
+  background-color: #ff8800; }
+
+.effect[bgcolor-number='8'] {
+  background-color: #ffff00; }
+
+.effect[bgcolor-number='9'] {
+  background-color: #00ff00; }
+
+.effect[bgcolor-number='10'] {
+  background-color: #008888; }
+
+.effect[bgcolor-number='11'] {
+  background-color: #00ffff; }
+
+.effect[bgcolor-number='12'] {
+  background-color: #0000ff; }
+
+.effect[bgcolor-number='13'] {
+  background-color: #ff00ff; }
+
+.effect[bgcolor-number='14'] {
+  background-color: #888888; }
+
+.effect[bgcolor-number='15'] {
+  background-color: #cccccc; }
+
+#loading_screen {
+  color: white;
+  font-family: "Source Sans Pro";
+  font-size: 2em;
+  height: 2em;
+  line-height: 2em;
+  font-weight: 300;
+  padding: 0 1em;
+  text-align: center;
+  border: 1px solid #5f89ad;
+  background: -webkit-linear-gradient(top, #92aec7, #7096b5);
+  background: -moz-linear-gradient(top, #92aec7, #7096b5);
+  background: -ms-linear-gradient(top, #92aec7, #7096b5);
+  background: -o-linear-gradient(top, #92aec7, #7096b5);
+  background: linear-gradient(top, #92aec7, #7096b5);
+  -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.3) inset, 0 0 15px 3px black;
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.3) inset, 0 0 15px 3px black;
+  border: 1px solid #4a6f8f;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  position: fixed;
+  top: 50%;
+  left: 1em;
+  right: 1em;
+  margin-top: -1.5em;
+  opacity: 1;
+  /* Set by JavaScript */
+  -webkit-transition: opacity 0.8s linear;
+  -moz-transition: opacity 0.8s linear;
+  -ms-transition: opacity 0.8s linear;
+  -o-transition: opacity 0.8s linear;
+  transition: opacity 0.8s linear; }

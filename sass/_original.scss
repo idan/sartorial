@@ -1,0 +1,306 @@
+@import "bourbon/bourbon";
+
+
+/* Basic Body Structure */
+* {
+    @include box-sizing(border-box);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    word-wrap: break-word;
+}
+
+body {
+    color: #fff;
+    height: 100%;
+    z-index: 100;
+    overflow: hidden;
+    overflow-y: visible;
+    background-color: #222;
+    font-family: "SourceCodePro-Light";
+    font-size: 14px;
+    font-family: "Lucida Grande";
+}
+
+body div#body_home {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    width: 100%;
+    z-index: 100;
+    max-height: 99.99%;
+    position: absolute;
+    opacity: 0; /* Set by JavaScript */
+    -webkit-transition: opacity 0.8s linear;
+}
+
+body[type=channel] div#body_home {
+    max-height: 96.5%;
+}
+
+body .line {
+    margin-top: -1px;
+}
+
+body[dir=rtl] .sender {
+    display: inline-block;
+}
+
+/* Loading Screen */
+
+body div#loading_screen {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -11px;
+    margin-left: -150px;
+    width: 300px;
+    height: 21px;
+    font-size: 18px;
+    background: #181818;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 10px;
+    opacity: 1; /* Set by JavaScript */
+    -webkit-transition: opacity 0.8s linear;
+}
+
+/* Time */
+
+.time {
+    color: white;
+    opacity: 0.3;
+    white-space: nowrap;
+    display: block;
+    float: right;
+    margin: 0 0 0 1em;
+}
+
+body[dir=rtl] .time {
+    float: left;
+    margin: 0 1em 0 0;
+}
+
+/* Links */
+
+a {
+    color: #0080FF;
+    border-color: #0080FF;
+    text-decoration: none;
+    border-bottom: dotted 1px;
+}
+
+a:hover {
+    color: #40A0FF;
+    border-color: #40A0FF;
+}
+
+/* Topic Bar */
+
+#topic_bar {
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0; /* Set by JavaScript */
+    z-index: 400;
+    color: #8E8E8E;
+    position: fixed;
+    padding: 2px 0.5em 3px;
+    box-shadow: 0 1px 5px #777;
+    border-bottom: 1px solid #404040;
+    text-shadow: 1px 1px rgba(10, 10, 10, 0.7);
+    background: -webkit-linear-gradient(top, #0F0F0F 0%, #262626 100%);
+    -webkit-transition: opacity 0.8s linear;
+}
+
+#topic_bar a,
+#topic_bar span.channel {
+    color: #8E8E8E;
+    border-color: #8E8E8E;
+    text-shadow: 1px 1px rgba(10, 10, 10, 0.7);
+}
+
+/* Images */
+
+body a img {
+    border: 0;
+}
+
+body img {
+    display: block;
+    max-width: 95%;
+    margin: 15px 15px 12px 15px;
+}
+
+/* Remember Line */
+
+div[id=mark] {
+    position: relative;
+    z-index: 295;
+    margin-top: -1px;
+    border-bottom: 1px dashed;
+    border-color: #444;
+    -webkit-transition: 0.2s linear;
+}
+
+/* NOTICE/CTCP/WALLOPS */
+
+body div.line[type*=ctcp],
+body div.line[type*=notice],
+body div.line[type*=wallops] {
+    color: #f00;
+    z-index: 191;
+    background: #400;
+    position: relative;
+    padding: 2px 5px 2px 5px;
+    border-top: 1px solid #811;
+    border-bottom: 1px solid #811;
+}
+
+body div[type*=notice] .sender {
+    color: #f00;
+    font-weight: 700;
+}
+
+/* PRIVMSG */
+
+body div.line[type*=privmsg][highlight=false] {
+    padding: 3px 5px 3px 5px;
+}
+
+body div.line[type*=privmsg][highlight=true],
+body div.line[type*=action][highlight=true] {
+    font-weight: normal;
+    padding: 2px 5px 2px 5px;
+    border-top: 1px solid #988C00;
+    border-bottom: 1px solid #988C00;
+    background-color: #362C00 !important;
+}
+
+body div[type="privmsg"] .message {
+    color: #aaa;
+}
+
+body div[type*=privmsg] p[type*=myself] .message {
+    color: #fff;
+}
+
+body div[type*=privmsg] .sender {
+    font-weight: 700;
+}
+
+/* ACTION */
+
+body div.line[type*=action] {
+    padding: 3px 5px 3px 5px;
+}
+
+body div[type="action"] .message {
+    color: #aaa;
+}
+
+body div[type*=action] .sender {
+    font-weight: 700;
+}
+
+body div[type*=action] p[type*=myself] .sender,
+body div[type*=action] p[type*=myself] .message {
+    color: #B52CF6;
+}
+
+body[dir=ltr] div[type*=action] .sender:before {
+    content: "\2022";
+    margin-right: 0.4em;
+}
+
+body[dir=ltr] div[type*=action] .sender:after {
+    content: "";
+    /* margin-right: 0.4em; */
+}
+
+body[dir=rtl] div[type*=action] .sender:before {
+    content: "\2022";
+    margin-left: 0.4em;
+}
+
+body[dir=rtl] div[type*=action] .sender:after {
+    content: "";
+    /* margin-left: 0.4em; */
+}
+
+/* DEBUG/INVITE */
+
+body div.line[type*=invite],
+body div.line[type*=debug] ,
+body div.line[type*=rawhtml] {
+    color: #777;
+    z-index: 190;
+    background: #222;
+    position: relative;
+    padding: 2px 5px 2px 5px;
+    border-top: 1px solid #444;
+    border-bottom: 1px solid #444;
+}
+
+/* GENERAL EVENT */
+
+body div.line[type*=join],
+body div.line[type*=part],
+body div.line[type*=kick],
+body div.line[type*=quit],
+body div.line[type*=kill],
+body div.line[type*=nick],
+body div.line[type*=mode],
+body div.line[type*=topic],
+body div.line[type*=website] {
+    padding: 3px 5px 3px 5px;
+    color: #666;
+}
+
+body[dir=ltr] div[type*=join] .message:before {
+    content: "→";
+    color: #0c0;
+    /* margin-right: 0.4em; */
+}
+
+body[dir=ltr] div[type*=kick] .message:before,
+body[dir=ltr] div[type*=part] .message:before,
+body[dir=ltr] div[type*=quit] .message:before {
+    content: "←";
+    color: #e00;
+    /* margin-right: 0.4em; */
+}
+
+body[dir=ltr] div[type*=nick] .message:before {
+    content:"•";
+    color: #0c0;
+    /* margin-right: 0.4em; */
+}
+
+body[dir=rtl] div[type*=join] .message:before {
+    content: "→";
+    color: #0c0;
+    /* margin-left: 0.4em; */
+}
+
+body[dir=rtl] div[type*=kick] .message:before,
+body[dir=rtl] div[type*=part] .message:before,
+body[dir=rtl] div[type*=quit] .message:before {
+    content: "←";
+    color: #e00;
+    /* margin-left: 0.4em; */
+}
+
+body[dir=rtl] div[type*=nick] .message:before {
+    content:"•";
+    color: #0c0;
+    /* margin-left: 0.4em; */
+}
+
+@import "nick_colors";
+@import "mirc_colors";

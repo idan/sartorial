@@ -1,0 +1,9 @@
+/* Links */
+
+a {
+    color: #7aa6da;
+    @include transition(color 160ms linear);
+    &:hover {
+        color: #bbdaff;
+    }
+}

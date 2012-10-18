@@ -1,0 +1,19 @@
+/* Topic Bar */
+
+#topic_bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0; /* Set by JavaScript */
+    z-index: 400;
+    color: #aaa;
+    padding: 0.5em 1em;
+    border-bottom: 1px solid #404040;
+    font-family: "Source Sans Pro";
+    font-weight: 300;
+    font-size: 1.25em;
+    background: #222;
+    text-align: center;
+    @include box-shadow(0 10px 30px #222);
+}
