@@ -6,7 +6,7 @@ A pleasantly clean dark theme for the [Textual IRC client](http://codeux.com/tex
 
 * It's dark.
 * Nice colors! (Mostly appropriated from Chris Kempson's [Tomorrow theme](https://github.com/chriskempson/tomorrow-theme)).
-* Sensible typography courtesy of Adobe's Source family. Monospaced Source Code for the body content, proportional Source Sans for other bits.
+* Sensible typography courtesy of Adobe's Source family. Monospaced Source Code for the body content, proportional Source Sans for other bits. Textual’s content is just HTML and CSS, so these two **fonts are included with the theme**, no need to download them separately.
 * Timestamps are on the right, but only show up when you hover, to reduce visual clutter
 
 ## Screenshot?
@@ -21,3 +21,13 @@ It depends if you have a sandboxed build of Textual. Check out the theme folder 
 
 * Sandboxed: ~/Library/Containers/com.codeux.textual/Data/Library/Application Support/Textual IRC/Styles/sartorial
 * Non-sandboxed: ~/Library/Application Support/Textual IRC/Styles/sartorial
+
+## Hacking?
+
+License is BSD. See copyright.txt.
+
+If you'd like to edit the style, you'll need the `sass` and `bourbon` ruby gems installed. Assuming you're in the `sass/` directory inside the project, you invoke sass as follows:
+
+    sass --watch .:.. -r ./bourbon/lib/bourbon.rb
+
+Happy hacking!
