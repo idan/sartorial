@@ -114,7 +114,9 @@ body {
       position: absolute;
       left: 0;
       width: 10em;
-      text-align: right; }
+      text-align: right;
+      text-overflow: ellipsis;
+      overflow: hidden; }
   .line[type*=notice], .line[type*=ctcp], .line[type*=wallops] {
     color: red;
     opacity: 0.6; }
