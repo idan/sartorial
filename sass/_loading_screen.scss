@@ -2,11 +2,10 @@
     $blue: #81a2be;
     color: white;
     font-family: "Source Sans Pro" !important;
-    font-size: 2em;
-    height: 2em;
-    line-height: 2em;
+    font-size: 1.5em;
+    line-height: 1.5em;
     font-weight: 300;
-    padding: 0 1em;
+    padding: 0.5em;
     text-align: center;
     border: 1px solid darken($blue, 10%);
     @include background(linear-gradient(lighten($blue, 5%), darken($blue, 5%)));
@@ -14,10 +13,8 @@
     border: 1px solid darken($blue, 20%);
     @include border-radius(3px);
     position: fixed;
-    top: 50%;
-    left: 1em;
+    top: 1em;
     right: 1em;
-    margin-top: -1.5em;
     opacity: 1; /* Set by JavaScript */
     @include transition(opacity 0.8s linear);
 }

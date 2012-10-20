@@ -387,11 +387,10 @@ body .inline_nickname[colornumber='30'] {
 #loading_screen {
   color: white;
   font-family: "Source Sans Pro" !important;
-  font-size: 2em;
-  height: 2em;
-  line-height: 2em;
+  font-size: 1.5em;
+  line-height: 1.5em;
   font-weight: 300;
-  padding: 0 1em;
+  padding: 0.5em;
   text-align: center;
   border: 1px solid #5f89ad;
   background: -webkit-linear-gradient(top, #92aec7, #7096b5);
@@ -405,10 +404,8 @@ body .inline_nickname[colornumber='30'] {
   -webkit-border-radius: 3px;
   border-radius: 3px;
   position: fixed;
-  top: 50%;
-  left: 1em;
+  top: 1em;
   right: 1em;
-  margin-top: -1.5em;
   opacity: 1;
   /* Set by JavaScript */
   -webkit-transition: opacity 0.8s linear;
