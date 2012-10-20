@@ -15,8 +15,16 @@ Srsly, the Appstore 2.1.0 version will not work with this theme.
 
 * It's dark.
 * Nice colors! (Mostly appropriated from Chris Kempson's [Tomorrow theme](https://github.com/chriskempson/tomorrow-theme)).
-* Sensible typography courtesy of Adobe's Source family. Monospaced Source Code for the body content, proportional Source Sans for other bits. Textual’s content is just HTML and CSS, so these two **fonts are included with the theme**, no need to download them separately.
+* Sensible typography courtesy of Adobe's Source family. Monospaced Source Code for the body content, proportional Source Sans for other bits. See the "Fonts" section below for more instructions.
 * Timestamps are on the right, but only show up when you hover, to reduce visual clutter
+
+## Fonts?
+
+The screenshot below is using two typefaces by Adobe: [Source Sans Pro](https://github.com/adobe/source-sans-pro/downloads) for ancillary information (like channel topics and join/part notifications) and [Source Code Pro](https://github.com/adobe/Source-Code-Pro/downloads) for the body of the window.
+
+You _chan_ choose a different font, but the entire theme assumes you'll be working with these two typefaces. You can choose a different typeface for the body of the window, but as the commercials say on teevee, "results may vary."
+
+If you're looking to replicate the look in the screenshot below, choose Source Code Pro Light at 14px.
 
 ## Screenshot?
 

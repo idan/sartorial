@@ -1,6 +1,4 @@
 @import "bourbon/bourbon";
-@import "fonts";
-
 
 /* Basic Body Structure */
 * {
@@ -14,15 +12,12 @@ html, body {
 }
 
 body {
-//    color: #B7C5C3;
     color: #71736F;
     height: 100%;
     z-index: 100;
     overflow: hidden;
     overflow-y: visible;
     background-color: #1D1F21;
-    font-family: "Source Code Pro" !important;
-    font-weight: 300;
     font-size: 1em;
 }
 
